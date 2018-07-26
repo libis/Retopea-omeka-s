@@ -7,7 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'ZendXml\\' => array($vendorDir . '/zendframework/zendxml/library'),
-    'Prophecy\\' => array($vendorDir . '/phpspec/prophecy/src'),
     'ML\\JsonLD' => array($vendorDir . '/ml/json-ld'),
     'ML\\IRI' => array($vendorDir . '/ml/iri'),
     'HTMLPurifier' => array($vendorDir . '/ezyang/htmlpurifier/library'),
