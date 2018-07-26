@@ -1,0 +1,32 @@
+<div class="preview-block">
+
+<?php if ($this->heading): ?>
+<h2><?php echo $this->heading; ?></h2>
+<?php endif; ?>
+
+<ul class="resource-list preview">
+<?php
+$headingTerm = $this->siteSetting('browse_heading_property_term', 'dcterms:title');
+$bodyTerm = $this->siteSetting('browse_body_property_term', 'dcterms:description');
+foreach ($this->items as $item):
+    $heading = $item->value($headingTerm, ['default' => $this->translate('[Untitled]')]);
+    $body = $item->value($bodyTerm);
+?>
+    <li class="item resource">
+        <?php echo $this->thumbnail($item, 'medium', ['title' => $heading]); ?>
+        <h4><?php echo $item->link($heading); ?></h4>
+        <?php if ($body): ?>
+        <div class="description"><?php echo $body; ?></div>
+        <?php endif; ?>
+    </li>
+<?php endforeach; ?>
+</ul>
+
+<?php
+$linkText = $this->linkText == '' ? $this->translate('Browse all') : $this->linkText;
+echo $this->hyperlink($linkText, $this->url(
+    'site/resource', ['controller' => 'item', 'action' => 'browse'], ['query' => $this->query], true
+));
+?>
+
+</div>
