@@ -955,6 +955,13 @@ ul.resource-list .resource img ~ * {
 /* @end */
 
 /* @group ----- Show ----- */
+.item-show{
+  display:static;
+
+  .media-embeds{
+    margin-bottom: 25px;
+  }
+}
 
 body.resource #content > h2:first-of-type + h3 {
     font-size: .75 * $base-font-size;
@@ -967,7 +974,7 @@ body.resource #content > h2:first-of-type + h3 {
 }
 
 .property h4 {
-    margin-bottom: 0;
+    margin: 0;
     font-size: .75 * $base-font-size;
 }
 

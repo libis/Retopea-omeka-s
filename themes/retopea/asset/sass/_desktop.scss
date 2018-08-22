@@ -346,6 +346,25 @@ body.item-set .metadata ~ nav.pagination:first-of-type {
 
 /* @end */
 
+/* @group ----- Item show ----- */
+.item-show{
+  display:flex;
+
+  .media-embeds{
+    flex: 1 1 span(6 of 12);
+    background: rgba($primary,0.05);
+    padding: 1*gutter();
+    margin-right:gutter();
+  }
+
+  .metadata{
+    flex: 1 1 span(6 of 12);
+    padding: 1*gutter();
+  }
+}
+
+/* @end */
+
 /* @group ----- Page and blocks ----- */
 
 .preview-block {
@@ -367,7 +386,7 @@ ul.preview.resource-list li:first-of-type {
 }
 
 .page-blocks{
-  //max-width: 800px;
+  padding-top:25px;
 }
 
 /* @end */
