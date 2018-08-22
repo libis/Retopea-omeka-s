@@ -21,10 +21,16 @@
     }
 
     $(document).ready(function() {
-        $('header nav').addClass('closed');
+        $('header nav ul').addClass('closed');
 
-        $('header nav').click(function() {
-            $(this).toggleClass('open').toggleClass('closed');
+        $('.menu-btn').click(function() {
+             $('header nav ul').toggleClass('open').toggleClass('closed');
+             console.log($('.menu-btn').text());
+             if($('.menu-btn').text() == '\u2630'){
+               $('.menu-btn').text('\u2715');
+             }else{
+               $('.menu-btn').text('\u2630');
+             }
         });
 
         // Maintain iframe aspect ratios

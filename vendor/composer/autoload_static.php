@@ -4,11 +4,12 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit5c78294cea9486b9466278f654c370a3
+class ComposerStaticInit1b214364c2cc54a9c93caf62ab236ea2
 {
     public static $files = array (
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+        '10a6847eba8a430a134fad89f4a30a26' => __DIR__ . '/..' . '/zendframework/zend-cache/autoload/patternPluginManagerPolyfill.php',
         '34901568a1e26d13dd475cb2c85e0284' => __DIR__ . '/..' . '/zendframework/zend-form/autoload/formElementManagerPolyfill.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
     );
@@ -70,6 +71,11 @@ class ComposerStaticInit5c78294cea9486b9466278f654c370a3
             'Zend\\Cache\\' => 11,
             'Zend\\Barcode\\' => 13,
             'Zend\\Authentication\\' => 20,
+            'ZendXml\\' => 8,
+        ),
+        'T' => 
+        array (
+            'TrueBV\\' => 7,
         ),
         'S' => 
         array (
@@ -79,8 +85,10 @@ class ComposerStaticInit5c78294cea9486b9466278f654c370a3
         ),
         'P' => 
         array (
+            'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
             'Psr\\Container\\' => 14,
+            'Psr\\Cache\\' => 10,
         ),
         'O' => 
         array (
@@ -322,6 +330,14 @@ class ComposerStaticInit5c78294cea9486b9466278f654c370a3
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-authentication/src',
         ),
+        'ZendXml\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zendframework/zendxml/src',
+        ),
+        'TrueBV\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/true/punycode/src',
+        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
@@ -334,6 +350,10 @@ class ComposerStaticInit5c78294cea9486b9466278f654c370a3
         array (
             0 => __DIR__ . '/..' . '/symfony/console',
         ),
+        'Psr\\SimpleCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
@@ -341,6 +361,10 @@ class ComposerStaticInit5c78294cea9486b9466278f654c370a3
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
+        ),
+        'Psr\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
         'Omeka\\Composer\\' => 
         array (
@@ -381,13 +405,6 @@ class ComposerStaticInit5c78294cea9486b9466278f654c370a3
     );
 
     public static $prefixesPsr0 = array (
-        'Z' => 
-        array (
-            'ZendXml\\' => 
-            array (
-                0 => __DIR__ . '/..' . '/zendframework/zendxml/library',
-            ),
-        ),
         'M' => 
         array (
             'ML\\JsonLD' => 
@@ -445,10 +462,10 @@ class ComposerStaticInit5c78294cea9486b9466278f654c370a3
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit5c78294cea9486b9466278f654c370a3::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit5c78294cea9486b9466278f654c370a3::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit5c78294cea9486b9466278f654c370a3::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit5c78294cea9486b9466278f654c370a3::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit1b214364c2cc54a9c93caf62ab236ea2::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit1b214364c2cc54a9c93caf62ab236ea2::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit1b214364c2cc54a9c93caf62ab236ea2::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit1b214364c2cc54a9c93caf62ab236ea2::$classMap;
 
         }, null, ClassLoader::class);
     }

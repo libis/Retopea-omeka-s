@@ -45,6 +45,7 @@ header nav {
     position: static;
     justify-content: space-between;
     padding: 0 (2 * gutter());
+    flex-wrap: nowrap;
 }
 
 header nav:before {
@@ -54,6 +55,7 @@ header nav:before {
 }
 
 header nav ul{
+  display:block;
   padding:0;
   text-align: left;
 }
@@ -64,6 +66,7 @@ header nav ul a {
 
 header nav ul li {
     position: static;
+    line-height: 1.5*$base-line-height;
 }
 
 header nav.closed ul,header nav.open ul,
@@ -154,7 +157,7 @@ header nav ul.navigation {
 
 header nav > ul > li > a {
     //margin: $spacing-s;
-    height: $base-line-height;
+    height: 1.2*$base-line-height;
     border-bottom:2px solid rgba($primary,0.8);
 }
 
@@ -199,26 +202,62 @@ header nav > ul > li > ul > li > ul > li a {
 }
 
 #search {
-    width:400px;
+    flex: 0 0 400px;
     padding:0;
     padding-left: gutter();
+    border:none;
 }
 
 #search form input[type="text"],
 #search form button[type="submit"] {
-    height: $base-line-height;
     font-size: .75 * $base-font-size;
-    line-height: $base-line-height;
 }
 
 #search form button[type="submit"] {
     width: $base-line-height;
-    height: $base-line-height;
-    padding: 0;
+    height: 1.5*$base-line-height;
+}
+.hero-top{display:none;}
+.hero{
+  display:block;
+  background: url('../images/banner_kadoc.jpg');
+  background-size: cover;
+  padding:12rem 0 0 0;
+  margin-bottom: 1 * $spacing-l;
 
-    &:before {
-        line-height: $base-line-height;
+  .intro{
+    @include container;
+    padding: 0 (2 * gutter());
+
+    .title-box{
+      padding: gutter();
+      background: rgba($primary,0.8);
+      width: span(6 of 12);
+      font-weight: 100;
+
+      .site-title:hover,
+      .site-title:active {
+          border-bottom: 0;
+      }
+
+      .site-title h1{
+        font-weight:100;
+        margin:0;
+        color:white;
+        font-size: 1.9 * $base-font-size;
+        line-height: 1.5 * $base-line-height;
+        text-transform: none;
+        text-transform: uppercase;
+
+        .retopea{
+          font-weight:700;
+          margin-right: 1rem;
+          color:white;
+          font-size: 2.5 * $base-font-size;
+        }
+      }
     }
+  }
 }
 
 /* @end */
@@ -234,6 +273,33 @@ ul.resource-list .resource img {
 
 ul.resource-list .resource img ~ * {
     width: calc(100% - #{4.5 * $spacing-l});
+}
+
+.masonry{
+    column-count: 4;
+    column-gap: 50px;
+
+   .body{
+     padding: 0;
+
+     h4{
+        font-size: $base-font-size;
+        font-weight: bold;
+        padding: 0.1rem 0 0.5rem 0;
+        margin: 0;
+        line-height: 1.4;
+
+        a{
+          margin-bottom: 0.2rem;
+          border-bottom: 2px solid $primary;
+        }
+     }
+   }
+
+   .featured{
+     padding: 0.7rem 1rem 1rem 1rem !important;
+     color: white;
+   }
 }
 
 /* @end */
@@ -291,40 +357,17 @@ ul.preview.resource-list li:first-of-type {
     padding-top: ($spacing-l - 1px);
 }
 
-.home-blocks{
-  display: flex;
-}
-
 .block{
   //flex: left;
   flex: 1 1 span(4 of 12);
-  padding: 0 gutter() / 2;
-  margin-bottom: 1rem;
-
-  .col-content{
-    height:200px;
-    overflow:hidden;
-  }
-
-  img{
-    width: 100%;
-  }
-
-  h2{
-    color:$primary;
-    font-weight: 300;
-    text-transform: uppercase;
-    font-size: 1.5 * $base-font-size;
-    margin-top:0;
-
-    a{
-      border-bottom: 1px solid rgba($primary,0.2);
-    }
-  }
 }
 
 .page #content{
   padding: 0 2*gutter() 30px;
+}
+
+.page-blocks{
+  //max-width: 800px;
 }
 
 /* @end */

@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+}
+
+.start {
+    background-color: $bg;
+    font-family: $sans;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    margin: 0;
+    word-wrap: break-word;
+
+    /* @group ----- Navigation ----- */
+
+    header nav.closed ul {
+          display:none;
+    }
+
+    header nav .menu-btn {
+          display:none;
+    }
+
+    header nav.open:before {
+        content: "\f00d";
+    }
+
+    header nav ul {
+        display:none;
+    }
+    /* @end */
+
+    /* @group ----- Header ----- */
+
+    .site-title h1 {
+        font-size: 1.1 * $base-font-size;
+        line-height: 1.1 * $base-line-height;
+    }
+
+    header {
+      padding:0;
+    }
+
+    .hero-top{
+      display:none;
+    }
+
+    .hero{
+      margin-bottom: 3rem;
+    }
+
+    button.o-icon-search {
+        display: none;
+    }
+
+    #search {
+      display:none;
+    }
+
+    /* @end */
+
+    /* @group ----- Page and Blocks ----- */
+
+    .home-blocks{
+      display: flex;
+      flex-wrap:wrap;
+
+      .intro{
+        flex-basis: span(6 of 12);
+        padding-right: 1rem;
+        background:rgba($primary,0.05);
+        padding:2rem;
+
+        p{
+          font-family: $sans;
+          font-size: 1 * $base-font-size;
+          font-weight: 100;
+        }
+
+      }
+
+      .language-menu{
+        flex-basis: span(6 of 12);
+
+        ul{
+          padding-left:4rem;
+          list-style: circle;
+          margin:0 2rem;;
+        }
+      }
+    }
+
+    .block{
+      //flex: left;
+      flex-basis: span(6 of 12);
+      padding: 0 gutter() / 2;
+      margin-bottom: 1rem;
+
+      .col-content{
+        overflow:hidden;
+      }
+
+      img{
+        width: 100%;
+      }
+
+      h2{
+        color:$primary;
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 1 * $base-font-size;
+        margin-top:0;
+
+        a{
+          border-bottom: 1px solid rgba($primary,0.2);
+        }
+      }
+    }
+}

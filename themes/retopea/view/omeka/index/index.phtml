@@ -5,7 +5,7 @@ echo $this->pageTitle($title);
 
 <h2><?php echo $this->translate('Sites'); ?></h2>
 
-<?php echo $this->pagination(); ?>
+<?php //echo $this->pagination(); ?>
 
 <?php if ($sites): ?>
 <ul>
@@ -16,8 +16,3 @@ echo $this->pageTitle($title);
 <?php endforeach; ?>
 </ul>
 <?php endif; ?>
-<p><?php echo sprintf(
-    $this->translate('Go to the %s to start working with %s.'),
-    $this->hyperlink($this->translate('Admin dashboard'), $this->url('admin')),
-    $title
-); ?></p>

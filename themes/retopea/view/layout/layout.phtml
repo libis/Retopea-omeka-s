@@ -29,10 +29,30 @@ $userBar = $this->partial('common/user-bar', ['site' => $site]);
         <?php echo $this->headScript(); ?>
     </head>
 
-    <?php echo $this->htmlElement('body'); ?>
+    <?php $sitetitle = strtolower($site->title());?>
+    <?php $sitetitle = str_replace(' ', '-', $sitetitle);?>
+
+    <?php echo $this->htmlElement('body')->setAttribute('class',$sitetitle);?>
         <?php echo $userBar; ?>
         <header>
             <nav>
+              <div class="hero-top">
+                <div class="intro">
+                  <div class="title-box">
+                    <a class="menu-btn" href="#">&#9776;</a>
+                    <?php if ($this->themeSetting('logo')): ?>
+                    <a href="<?php echo $site->url(); ?>" class="site-title"><img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo"></a>
+                    <?php else: ?>
+                    <a href="<?php echo $site->url(); ?>" class="site-title"><span class="retopea">Retopea</span>
+                    
+                    </a>
+                    <a href="<?php echo $site->url(); ?>" class="site-sub-title">
+                      <?php echo $site->title(); ?>
+                    </a>
+                    <?php endif; ?>
+                  </div>
+                </div>
+              </div>
             <?php
             echo $site->publicNav()->menu()->renderMenu(null, [
                 'maxDepth' => $this->themeSetting('nav_depth') - 1
@@ -48,11 +68,13 @@ $userBar = $this->partial('common/user-bar', ['site' => $site]);
         <div class="hero">
           <div class="intro">
             <div class="title-box">
-              <?php if ($this->themeSetting('logo')): ?>
-              <a href="<?php echo $site->url(); ?>" class="site-title"><img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo"></a>
-              <?php else: ?>
-              <a href="<?php echo $site->url(); ?>" class="site-title"><h1><span class="retopea">Retopea</span><?php echo $site->title(); ?></h1></a>
-              <?php endif; ?>
+              <a href="<?php echo $site->url(); ?>" class="site-title"><h1><span class="retopea">Retopea</span><br>
+                <?php if($site->title() == "Start"):?>
+                    Religious Toleration and Peace
+                <?php else: ?>
+                    <?php echo $site->title(); ?>
+                <?php endif; ?>
+              </h1></a>
             </div>
           </div>
         </div>
