@@ -13,9 +13,9 @@ return [
     ],
     'thumbnails' => [
         'types' => [
-            'large' => ['constraint' => 800],
-            'medium' => ['constraint' => 200],
-            'square' => ['constraint' => 200],
+            'large' => ['constraint' => 1000],
+            'medium' => ['constraint' => 400],
+            'square' => ['constraint' => 400],
         ],
         'thumbnailer_options' => [
             'imagemagick_dir' => null,
