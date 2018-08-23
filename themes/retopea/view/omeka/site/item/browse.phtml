@@ -28,7 +28,7 @@ $lang = $libis->getLanguage();
     <?php echo $this->hyperlink($this->translate('Advanced search'), $this->url('site/resource', ['controller' => 'item', 'action' => 'search'], ['query' => $query], true), ['class' => 'advanced-search']); ?>
 
 <?php else: ?>
-    <?php echo $this->pageTitle($this->translate('Items'), 2); ?>
+    <h1><?php echo $this->translate('Items'); ?></h1>
 <?php endif; ?>
 
 <?php echo $this->searchFilters(); ?>

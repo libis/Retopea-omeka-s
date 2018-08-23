@@ -35,7 +35,9 @@
     <aside class="search-facets">
         <h2><?php echo $translate('Filters'); ?></h2>
         <ul>
+          <?php var_dump($facets);?>
             <?php foreach ($facets as $name => $facetValues): ?>
+
                 <li class="search-facet">
                     <h3><?php echo $translate($facetLabel($name)); ?></h3>
                     <ul class="search-facet-items">

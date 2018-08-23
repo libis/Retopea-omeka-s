@@ -567,6 +567,19 @@ footer {
   }
 }
 
+.page-blocks{
+  padding-top:0;
+
+  h2{
+    color:$primary;
+    font-weight: bold;
+    font-size: 1.8 * $base-font-size;
+    text-transform: none;
+    margin-top:0;
+    margin-bottom:2rem;
+  }
+}
+
 .home-blocks{
   display: flex;
   flex-wrap:wrap
