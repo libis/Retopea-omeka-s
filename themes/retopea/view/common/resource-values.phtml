@@ -33,7 +33,7 @@ $lang = $libis->getLanguage();
                 <!--<?php if ($language = $value->lang()): ?>
                 <span class="language"><?php echo $language; ?></span>
                 <?php endif; ?>-->
-                <?php if($value->lang() == $lang):?>
+                <?php if($value->lang() == $lang || !$value->lang()):?>
                 <?php echo $value->asHtml(); ?>
                 <?php endif; ?>
             </div>

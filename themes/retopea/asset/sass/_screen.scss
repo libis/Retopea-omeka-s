@@ -212,10 +212,11 @@ header nav.closed ul {
 
 header nav .menu-btn {
     font-size: 2rem;
-    padding: 0 gutter();
-    width:1rem;
+    padding: 0.2*gutter() 0.8*gutter();
+    margin-left: gutter();
+    background: rgba($primary,0.1);
     cursor: pointer;
-    line-height: $base-line-height;
+    vertical-align: top;
 }
 
 header nav.open:before {
@@ -440,6 +441,7 @@ header {
     .title-box{
       width: 100%;
       font-weight: 100;
+      margin-bottom: gutter();
 
       .site-title:hover,
       .site-title:active {
@@ -447,24 +449,19 @@ header {
       }
 
       .site-title {
-        font-weight:100;
+        font-weight:700;
         margin:0;
         color: $primary;
-        font-size: 1rem;
-        line-height: $base-line-height;
+        font-size: 1.5rem;
+        font-size: 2 * $base-font-size;
         text-transform: none;
         text-transform: uppercase;
-
-        .retopea{
-          font-weight:700;
-          font-size: 1.5 * $base-font-size;
-          color: $primary;
-        }
       }
 
       .site-sub-title{
         display: block;
         margin-left: gutter();
+        line-height: 1;
       }
     }
   }
@@ -481,8 +478,8 @@ button.o-icon-search {
 #search {
     width:100%;
     flex: 0 0 100%;
-    background-color: #fff;
     padding: $spacing-s gutter();
+    margin-top:5px;
     border-top:1px solid rgba($primary,0.1);
     border-bottom:1px solid rgba($primary,0.05);
 }
@@ -530,9 +527,9 @@ button.o-icon-search {
 /* @group ----- Footer ----- */
 
 footer {
-
-    padding: 2*gutter() 0 $spacing-l;
-    border-top: 1px solid rgba($primary,0.05);
+    padding: 1.7 * gutter() 0;
+    margin-top: 2*gutter();
+    border-top: 1px solid rgba($primary,0.1);
 
     .logos{
       @include container;

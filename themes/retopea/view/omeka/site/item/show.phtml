@@ -9,7 +9,12 @@ $lang = $libis->getLanguage();
 ?>
 
 <h1>
-    <?php echo implode(", ",$item->value('dcterms:title',array('all' => 'true','lang' => $lang)));?>
+  <?php
+    $title = $item->value('dcterms:title',array('all' => 'true','lang' => $lang));
+    if($title):
+      echo implode(", ",$title);
+    endif;
+  ?>
 </h1>
 
 <?php $this->trigger('view.show.before'); ?>

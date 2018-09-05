@@ -205,6 +205,7 @@ header nav > ul > li > ul > li > ul > li a {
     flex: 0 0 400px;
     padding:0;
     padding-left: gutter();
+    margin-top:0;
     border:none;
 }
 
@@ -223,7 +224,7 @@ header nav > ul > li > ul > li > ul > li a {
   background: url('../images/banner_kadoc.jpg');
   background-size: cover;
   padding:12rem 0 0 0;
-  margin-bottom: 1 * $spacing-l;
+  margin-bottom: 1.2 * $spacing-l;
 
   .intro{
     @include container;
