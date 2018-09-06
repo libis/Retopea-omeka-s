@@ -386,4 +386,52 @@ ul.preview.resource-list li:first-of-type {
   padding: 0 2*gutter() 30px;
 }
 
+.home-blocks{
+  display: flex;
+  flex-wrap:wrap;
+
+  .intro{
+    flex-basis: span(6 of 12);
+    padding-right: 1rem;
+    background:rgba($primary,0.05);
+    padding:2rem;
+    margin-bottom: 0;
+
+    p{
+      font-family: $sans;
+      font-size: 1 * $base-font-size;
+      font-weight: 100;
+    }
+  }
+
+  .language-menu{
+    flex-basis: span(6 of 12);
+    background:transparent;
+    padding:0;
+    padding-left: 2rem;
+
+    ul{
+      padding-left:4rem;
+      list-style: circle;
+      margin:0 2rem;
+      padding-left:gutter();
+
+      li{
+        margin-bottom: 5px;
+      }
+
+      a{
+        
+      }
+    }
+  }
+}
+
+.block{
+  //flex: left;
+  flex-basis: span(6 of 12);
+  padding: 0 gutter() / 2;
+  margin-bottom: 1rem;
+}
+
 /* @end */

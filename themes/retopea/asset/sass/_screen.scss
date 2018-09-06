@@ -584,14 +584,41 @@ footer {
 }
 
 .home-blocks{
-  display: flex;
+  display: block;
   flex-wrap:wrap;
-  padding-top:25px;
+  //padding-top:25px;
+
+  .intro{
+    background:rgba($primary,0.05);
+    padding:2rem;
+    margin-bottom: gutter();
+  }
+
+  .language-menu{
+    background:rgba($primary,0.05);
+    padding:2rem;
+
+    ul{
+      padding-left:4rem;
+      list-style: circle;
+      margin:0 2rem;
+      margin-left:0;
+      padding-left:gutter();
+
+      li{
+        margin-bottom: 5px;
+      }
+
+      a{
+        border-bottom: 1px solid rgba($primary,0.1);
+      }
+    }
+  }
 }
 
 .block{
   //flex: left;
-  flex-basis: span(6 of 12);
+  flex-basis: span(12 of 12);
   padding: 0 gutter() / 2;
   margin-bottom: 1rem;
 

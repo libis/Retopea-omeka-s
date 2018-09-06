@@ -13,11 +13,9 @@
     /* @group ----- Navigation ----- */
 
     header nav.closed ul {
-          display:none;
     }
 
     header nav .menu-btn {
-          display:none;
     }
 
     header nav.open:before {
@@ -25,7 +23,6 @@
     }
 
     header nav ul {
-        display:none;
     }
     /* @end */
 
@@ -37,11 +34,10 @@
     }
 
     header {
-      padding:0;
     }
 
     .hero-top{
-      display:none;
+
     }
 
     .hero{
@@ -59,35 +55,6 @@
     /* @end */
 
     /* @group ----- Page and Blocks ----- */
-
-    .home-blocks{
-      display: flex;
-      flex-wrap:wrap;
-
-      .intro{
-        flex-basis: span(6 of 12);
-        padding-right: 1rem;
-        background:rgba($primary,0.05);
-        padding:2rem;
-
-        p{
-          font-family: $sans;
-          font-size: 1 * $base-font-size;
-          font-weight: 100;
-        }
-
-      }
-
-      .language-menu{
-        flex-basis: span(6 of 12);
-
-        ul{
-          padding-left:4rem;
-          list-style: circle;
-          margin:0 2rem;;
-        }
-      }
-    }
 
     .block{
       //flex: left;

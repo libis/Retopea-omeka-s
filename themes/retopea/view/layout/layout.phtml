@@ -44,10 +44,14 @@ $userBar = $this->partial('common/user-bar', ['site' => $site]);
                     <a href="<?php echo $site->url(); ?>" class="site-title"><img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo"></a>
                     <?php else: ?>
                     <a href="<?php echo $site->url(); ?>" class="site-title"><span class="retopea">Retopea</span>
-                    
+
                     </a>
                     <a href="<?php echo $site->url(); ?>" class="site-sub-title">
-                      <?php echo $site->title(); ?>
+                      <?php if($site->title() == "Start"):?>
+                          Religious Toleration and Peace
+                      <?php else: ?>
+                          <?php echo $site->title(); ?>
+                      <?php endif; ?>
                     </a>
                     <?php endif; ?>
                   </div>
