@@ -18,6 +18,9 @@ if ($logo):
     $title = '<img src="' . $this->escapeHtml($logo) . '">';
 endif;
 $userBar = $this->partial('common/user-bar', ['site' => $site]);
+
+$libis = $this->plugin('Libis');
+$lang = $libis->getLanguage();
 ?>
 <?php echo $this->doctype(); ?>
 <?php echo $this->htmlElement('html'); ?>
@@ -57,16 +60,38 @@ $userBar = $this->partial('common/user-bar', ['site' => $site]);
                   </div>
                 </div>
               </div>
-            <?php
-            echo $site->publicNav()->menu()->renderMenu(null, [
-                'maxDepth' => $this->themeSetting('nav_depth') - 1
-            ]);
-            ?>
+              <div class="nav-menu">
+                <?php
+                echo $site->publicNav()->menu()->renderMenu(null, [
+                    'maxDepth' => $this->themeSetting('nav_depth') - 1
+                ]);
+                ?>
 
+                <div id="language-nav">
+                    <?php
+                      $languages = array('en'=> 'EN','nl' => 'NL','fr' => 'FR',
+                      'de' => 'DE'
+                      );
+                      $path = $site->url();
+                    ?>
+                    <?php foreach ($languages as $locale => $language): ?>
+                      <span>
+                        <?php if ($locale != $lang): ?>
+                             <a href="<?php echo str_replace($lang,$locale,$path);
+                             ?>">
+                                 <?php echo $language ?>
+                             </a>
+                        <?php else:?>
+                            <?php echo $language ?>
+                        <?php endif; ?>
+                      </span>
+                    <?php endforeach; ?>
+                </div>
+            </div>    
             <div id="search">
                 <?php echo $this->partial('common/search-form'); ?>
             </div>
-            </nav>
+          </nav>
         </header>
 
         <div class="hero">

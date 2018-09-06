@@ -21,11 +21,11 @@
     }
 
     $(document).ready(function() {
-        $('header nav ul').addClass('closed');
+        $('.nav-menu').addClass('closed');
 
         $('.menu-btn').click(function() {
-             $('header nav ul').toggleClass('open').toggleClass('closed');
-             console.log($('.menu-btn').text());
+             $('.nav-menu').toggleClass('open').toggleClass('closed');
+             //console.log($('.menu-btn').text());
              if($('.menu-btn').text() == '\u2630'){
                $('.menu-btn').text('\u2715');
              }else{

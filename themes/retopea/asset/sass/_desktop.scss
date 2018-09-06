@@ -54,9 +54,27 @@ header nav:before {
     display: none;
 }
 
+.nav-menu, .nav-menu.open{
+  display: flex;
+  flex-wrap: wrap;
+  position: static;
+  padding: 0;
+  background: white;
+
+  #language-nav{
+      flex: 0 0 100px;
+      display:block;
+      text-align: right;
+      margin-left: auto;
+      border:none;
+      margin-top: 0;
+  }
+}
+
 header nav ul{
   display:block;
   padding:0;
+  margin:0;
   text-align: left;
 }
 
@@ -72,7 +90,6 @@ header nav ul li {
 header nav.closed ul,header nav.open ul,
 header nav ul ul li {
     height: auto;
-    display:block;
     overflow: visible;
     margin:0;
 }
@@ -155,13 +172,13 @@ header nav ul.navigation {
     }
 }
 
-header nav > ul > li > a {
+.nav-menu > ul > li > a {
     //margin: $spacing-s;
     height: 1.2*$base-line-height;
     border-bottom:2px solid rgba($primary,0.8);
 }
 
-header nav > ul > li > a:hover {
+.nav-menu > ul > li > a:hover {
     border-bottom:2px solid rgba($primary,1);
 }
 
@@ -218,6 +235,8 @@ header nav > ul > li > ul > li > ul > li a {
     width: $base-line-height;
     height: 1.5*$base-line-height;
 }
+
+
 .hero-top{display:none;}
 .hero{
   display:block;
@@ -421,7 +440,7 @@ ul.preview.resource-list li:first-of-type {
       }
 
       a{
-        
+
       }
     }
   }

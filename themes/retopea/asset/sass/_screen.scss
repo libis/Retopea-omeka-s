@@ -214,7 +214,7 @@ header nav .menu-btn {
     font-size: 2rem;
     padding: 0.2*gutter() 0.8*gutter();
     margin-left: gutter();
-    background: rgba($primary,0.1);
+    background: rgba($primary,0.05);
     cursor: pointer;
     vertical-align: top;
 }
@@ -224,15 +224,7 @@ header nav.open:before {
 }
 
 header nav ul {
-    display:none;
-    padding:gutter();
-    text-align: center;
-    width:100%;
     list-style: none;
-    position: absolute;
-    top:1.5 * $base-line-height;
-    margin: 0 auto;
-    background: white;
 
     a {
         display: inline-block;
@@ -277,9 +269,46 @@ header nav ul {
     }
 }
 
+.nav-menu{
+  display:none;
+  padding:gutter();
+  width:96%;
+  position: absolute;
+  top:5.2rem;
+  left:2%;
+  z-index: 1000;
+  margin: 0 auto;
+  background: #efefef;
 
-header nav ul.open{
+  #language-nav{
+    color: #777;
+    font-size: 0.8 * $base-font-size;
+    line-height: 1.5*$base-line-height;
+    border-top: 1px solid #ccc;
+    margin-top: 1rem;
+
+    span{
+      border-right: 1px solid #777;
+      padding-left: 3px;
+    }
+
+    span:last-of-type{
+      border: none;
+    }
+
+    a{
+      font-weight: bold;
+    }
+  }
+}
+
+.nav-menu.open{
   display:block;
+}
+
+.nav-menu ul{
+  padding:0;
+  margin:0.2rem;
 }
 
 header nav > ul ul li {
