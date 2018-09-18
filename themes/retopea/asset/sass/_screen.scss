@@ -252,11 +252,10 @@ header nav ul {
         content: "\f105";
         position: absolute;
         right: 0;
-        top: -(1.5 * $spacing-l);
-        color: $light;
+        top:0;
+        color: rgba($primary,0.5);
         width: $spacing-l;
         height: 1.5 * $spacing-l;
-        line-height: 1.5 * $base-line-height;
         text-align: center;
     }
 
@@ -311,13 +310,13 @@ header nav ul {
   margin:0.2rem;
 }
 
-header nav > ul ul li {
+header .nav-menu > ul ul li {
     height: 0;
     overflow: hidden;
     border: 0;
 }
 
-header nav > ul ul:hover > li {
+header .nav-menu > ul ul:hover > li {
     height: auto;
     border-top: 1px solid $light;
     padding-top: -1px;
