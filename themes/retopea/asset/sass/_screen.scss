@@ -566,7 +566,7 @@ footer {
 
     img {
         //max-width: 200px;
-        height:40px;
+        height:50px;
         width:auto !important;
         margin-bottom:0.5rem !important;
         margin-right:15px !important;
@@ -603,7 +603,6 @@ footer {
 
   h2{
     color:$primary;
-    font-weight: bold;
     font-size: 1.8 * $base-font-size;
     text-transform: none;
     margin-top:0;
@@ -625,6 +624,24 @@ footer {
   .language-menu{
     background:rgba($primary,0.05);
     padding:2rem;
+    margin-top: 10px;
+
+    .start-button{
+      a {
+        background: $primary;
+        color: white;
+        border-radius: 2px;
+        padding: 10px;
+        font-weight: 100;
+        text-transform: uppercase;
+      }
+
+      a::after{
+        font-family: "Font Awesome 5 Free";
+        content: "\f105";
+        margin-left: 5px;
+      }
+    }
 
     ul{
       padding-left:4rem;
