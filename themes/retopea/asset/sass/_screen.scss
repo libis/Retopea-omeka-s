@@ -433,7 +433,7 @@ nav.pagination {
 
 .breadcrumbs {
     font-size: .85 * $base-font-size;
-    margin: 25px 0 15px;
+    margin: 15px 0 5px;
 
     a{
       font-weight: 700;
@@ -609,8 +609,8 @@ footer {
     color:$primary;
     font-size: 1.8 * $base-font-size;
     text-transform: none;
-    margin-top:0;
-    margin-bottom:2rem;
+    margin-top:1rem;
+    margin-bottom:1.5rem;
   }
 }
 
