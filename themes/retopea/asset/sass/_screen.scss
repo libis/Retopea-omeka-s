@@ -337,6 +337,10 @@ header nav > ul > li > ul > li a {
     padding-left: $spacing-l;
 }
 
+header nav > ul > li > ul > li > ul {
+  display:none;
+}
+
 /* Third level items */
 header nav > ul > li > ul > li > ul > li a {
     padding-left: 2 * $spacing-l;
@@ -429,7 +433,7 @@ nav.pagination {
 
 .breadcrumbs {
     font-size: .85 * $base-font-size;
-    margin: $spacing-l 0 (-$spacing-m);
+    margin: 25px 0 15px;
 
     a{
       font-weight: 700;

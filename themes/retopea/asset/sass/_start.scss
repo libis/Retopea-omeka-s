@@ -24,6 +24,10 @@
 
     header nav ul {
     }
+
+    .sub-menu{
+      display:none;
+    }
     /* @end */
 
     /* @group ----- Header ----- */
@@ -59,6 +63,10 @@
       .language-menu{
         flex-basis: span(4 of 12);
       }
+    }
+
+    .site-page-pagination{
+      display:none;
     }
 
     /* @end */

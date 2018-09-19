@@ -108,6 +108,10 @@ header .nav-menu > ul ul:hover > li {
     border: 0;
 }
 
+.nav-menu{
+  margin: 0;
+}
+
 header .navigation {
     position: static;
 
@@ -205,7 +209,7 @@ header .nav-menu > ul li:hover ul li {
 header .nav-menu > ul > li > ul > li a,
 header .nav-menu > ul > li > ul > li > ul > li a {
     padding-left: 0;
-    line-height: 1;
+    line-height: 1.5;
 }
 
 .sub-menu ul {
