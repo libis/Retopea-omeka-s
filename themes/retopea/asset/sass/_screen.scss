@@ -511,39 +511,42 @@ button.o-icon-search {
     width:100%;
     flex: 0 0 100%;
     padding: $spacing-s gutter();
-    margin-top:5px;
-    border-top:1px solid rgba($primary,0.1);
     border-bottom:1px solid rgba($primary,0.05);
 }
 
 #search form {
     display: flex;
     flex-wrap: nowrap;
+
+    border:1px solid rgba($primary,0.2);
 }
 
 #search form input[type="text"] {
     width: 100%;
-    background: rgba($primary,0.05);
     height: 1.5*$base-line-height;
     font-size: .75 * $base-font-size;
     line-height: $base-line-height;
     border:none;
+    background: none;
 }
 
 #search form button[type="submit"] {
     height: 1.5 * $base-line-height;
-    width: 1.5 * $base-line-height;
+    width: 2 * $base-line-height;
     font-size: .75 * $base-font-size;
     line-height: 1.5*$base-line-height;
     text-indent: -9999px;
     position: relative;
-    background: none;
     border-radius: 0 3px 3px 0;
+    padding-right: 10px;
+    padding-left: 10px;
+    background: none;
 
     &:before {
         content: "\f002";
         font-family: "Font Awesome 5 Free";
         position: absolute;
+        color: $primary;
         top: 0;
         left: 0;
         right: 0;

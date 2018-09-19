@@ -131,7 +131,7 @@ header .navigation {
     & > li > ul {
         position: absolute;
         display:none;
-        background-color: #fff;
+        background-color: #f8f4f5;
         padding: 0;
         list-style: none;
         //width: 100%;
@@ -168,10 +168,10 @@ header .navigation {
 
     & > li > ul > li {
         //width: 25%;
-        font-size: .75 * $base-font-size;
-        font-weight: bold;
+        font-size: .80 * $base-font-size;
+        font-weight: 200;
         padding-bottom: $spacing-l;
-        line-height: 1.2;
+        line-height: 2;
     }
 
     & > li > ul > li ul {
@@ -210,7 +210,7 @@ header .nav-menu > ul li:hover ul li {
 header .nav-menu > ul > li > ul > li a,
 header .nav-menu > ul > li > ul > li > ul > li a {
     padding-left: 0;
-    line-height: 1.5;
+    line-height: 2;
 }
 
 .sub-menu ul {
@@ -244,7 +244,7 @@ header .nav-menu > ul > li > ul > li > ul > li a {
 }
 
 #search form button[type="submit"] {
-    width: $base-line-height;
+    width: 35px;
     height: 1.5*$base-line-height;
 }
 
