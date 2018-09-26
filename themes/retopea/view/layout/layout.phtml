@@ -41,14 +41,14 @@ $lang = $libis->getLanguage();
             <nav>
               <div class="hero-top">
                 <div class="intro">
-                  <div class="title-box">
+                  <div class="title-btn">
                     <a class="menu-btn" href="#">&#9776;</a>
+                  </div>
+                  <div class="title-box">
                     <?php if ($this->themeSetting('logo')): ?>
                     <a href="<?php echo $site->url(); ?>" class="site-title"><img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" title="Logo"></a>
                     <?php else: ?>
-                    <a href="<?php echo $site->url(); ?>" class="site-title"><span class="retopea">Retopea</span>
-
-                    </a>
+                    <a href="<?php echo $site->url(); ?>" class="site-title">Retopea</a>
                     <a href="<?php echo $site->url(); ?>" class="site-sub-title">
                       <?php if($site->title() == "Start"):?>
                           Religious Toleration and Peace

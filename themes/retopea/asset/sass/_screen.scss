@@ -210,15 +210,6 @@ header nav.closed ul {
     margin: 0;
 }
 
-header nav .menu-btn {
-    font-size: 2rem;
-    padding: 0.2*gutter() 0.8*gutter();
-    margin-left: gutter();
-    background: rgba($primary,0.05);
-    cursor: pointer;
-    vertical-align: top;
-}
-
 header nav.open:before {
     content: "\f00d";
 }
@@ -247,22 +238,6 @@ header nav ul {
         font-weight: bold;
     }
 
-    li > ul:before {
-        font-family: "Font Awesome 5 Free";
-        content: "\f105";
-        position: absolute;
-        right: 0;
-        top:0;
-        color: rgba($primary,0.5);
-        width: $spacing-l;
-        height: 1.5 * $spacing-l;
-        text-align: center;
-    }
-
-    li > ul:hover:before {
-        content: "\f107";
-    }
-
     a:hover ~ ul:before {
         color: $gray;
     }
@@ -272,6 +247,7 @@ header nav ul {
   display:none;
   padding:gutter();
   width:96%;
+  max-width: 400px;
   position: absolute;
   top:5.2rem;
   left:2%;
@@ -308,6 +284,14 @@ header nav ul {
 .nav-menu ul{
   padding:0;
   margin:0.2rem;
+
+  li{
+    border-top: 1px solid rgba($primary,0.1);
+  }
+
+  li:first-of-type{
+    border:none;
+  }
 }
 
 header .nav-menu > ul ul li {
@@ -317,9 +301,9 @@ header .nav-menu > ul ul li {
 }
 
 header .nav-menu > ul ul:hover > li {
-    height: auto;
+    /*height: auto;
     border-top: 1px solid $light;
-    padding-top: -1px;
+    padding-top: -1px;*/
 }
 
 /* Second level items */
@@ -451,7 +435,6 @@ nav.pagination {
 
 header {
     background-color: #fff;
-    padding-top: $spacing-m;
     padding-bottom: ($spacing-m - 1px);
     position: relative;
 
@@ -466,14 +449,30 @@ header {
 
 .hero-top{
   width:100%;
+  padding-top: $spacing-m;
+  padding-bottom: $spacing-m/2;
+  background: $primary;
+  line-height: 1.2;
+
+  a{
+    color: white;
+  }
 
   .intro{
     @include container;
+    display:flex;
+
+    .menu-btn {
+        font-size: 2.3rem;
+        padding: 3px 5px;
+        margin-left: gutter();
+        cursor: pointer;
+        line-height: 4.2rem;
+    }
 
     .title-box{
       width: 100%;
       font-weight: 100;
-      margin-bottom: gutter();
 
       .site-title:hover,
       .site-title:active {
@@ -481,19 +480,18 @@ header {
       }
 
       .site-title {
-        font-weight:700;
+        font-weight:100;
         margin:0;
-        color: $primary;
-        font-size: 1.5rem;
-        font-size: 2 * $base-font-size;
+        color: white;
+        font-size: 3.6rem;
         text-transform: none;
         text-transform: uppercase;
       }
 
       .site-sub-title{
-        display: block;
-        margin-left: gutter();
-        line-height: 1;
+        display: inline-block;
+        width:140px;
+        color: rgba(white,0.8);
       }
     }
   }
