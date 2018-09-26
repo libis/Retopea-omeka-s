@@ -67,25 +67,32 @@ $lang = $libis->getLanguage();
                 ]);
                 ?>
 
-                <div id="language-nav">
+                <div id="lang-switcher" class="ui-dropdown-list">
                     <?php
                       $languages = array('en'=> 'EN','nl' => 'NL','fr' => 'FR',
                       'de' => 'DE'
                       );
                       $path = $site->url();
                     ?>
+
+  			            <h2 class="visuallyhidden">Sprache wählen</h2>
                     <?php foreach ($languages as $locale => $language): ?>
-                      <span>
+                      <?php if ($locale == $lang): ?>
+                          <p class="ui-dropdown-list-trigger">
+                          <span class="visuallyhidden">Aktuelle Sprache: </span> <strong><?php echo $language ?></strong></p>
+                      <?php endif; ?>
+                    <?php endforeach; ?>
+              			<ul>
+                    <?php foreach ($languages as $locale => $language): ?>
                         <?php if ($locale != $lang): ?>
-                             <a href="<?php echo str_replace($lang,$locale,$path);
+                             <li><a href="<?php echo str_replace($lang,$locale,$path);
                              ?>">
                                  <?php echo $language ?>
-                             </a>
-                        <?php else:?>
-                            <?php echo $language ?>
-                        <?php endif; ?>
-                      </span>
+                             </a></li>
+                        <?php endif;?>
+
                     <?php endforeach; ?>
+                    </ul>
                 </div>
             </div>
             <div id="search">

@@ -20,6 +20,8 @@
         }
     }
 
+
+
     $(document).ready(function() {
         $('.nav-menu').addClass('closed');
 
@@ -31,6 +33,13 @@
              }else{
                $('.menu-btn').text('\u2630');
              }
+        });
+
+        $('#lang-switcher').find('.ui-dropdown-list-trigger').each(function() {
+        	$(this).click(function(){
+      			$(this).parent().toggleClass('active');
+      		});
+
         });
 
         // Maintain iframe aspect ratios
