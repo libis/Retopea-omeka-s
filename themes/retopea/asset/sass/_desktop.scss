@@ -250,5 +250,12 @@ header .nav-menu > ul > li > ul > li > ul > li a {
 
 
 .hero-top{display:none;}
+.hero{
+  .intro{
+      .title-box{
+      width: span(6 of 12);
+    }
+  }
+}
 
 /* @end */
