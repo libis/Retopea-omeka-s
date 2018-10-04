@@ -710,15 +710,16 @@ footer {
 }
 
 .item-showcase {
-    margin: $spacing-l 0;
-    border-top: 1px solid $light;
-    border-bottom: 1px solid $light;
-    padding: ($spacing-l - 1px) 0 0;
+    margin: 0;
+
+    margin-bottom: $spacing-l;
+    //padding: ($spacing-l - 1px) 0 0;
     overflow: hidden;
     text-align: center;
     clear: both;
     display: flex;
     flex-wrap: wrap;
+    background: rgba(#f8f4f5,1);
 }
 
 .item.resource .caption {
@@ -736,15 +737,32 @@ footer {
 
 .item-showcase .resource.item {
     vertical-align: top;
-    margin-bottom: $spacing-l;
+    margin:0;
 
     img {
         margin-right: $spacing-m;
     }
 
-    &:only-child img {
-        margin: 0 auto;
+    &:only-child{
+      .media{
+        background: rgba($primary,0.05);
+
+      }
+
+      h3{
+        margin: 0;
+        padding: $spacing-m 0;
+        background: #f8f4f5;
+        font-size: 1.6rem;
+
+      }
+
+      img {
+          margin: 0 auto;
+          vertical-align: top;
+      }
     }
+
 
     &:not(:only-child) {
         width: 25%;
@@ -752,11 +770,15 @@ footer {
         padding: 0 gutter();
     }
 
+    &:not(:only-child) .media{
+      margin: $spacing-l 0 0;
+    }
+
     &:not(:only-child) h3 {
         clear: left;
-        font-size: .75 * $base-font-size;
+        font-size: .85 * $base-font-size;
         line-height: $base-line-height;
-        margin: $spacing-m 0 0;
+        margin: $spacing-m 0;
     }
 
     &:not(:only-child) img {
@@ -923,6 +945,26 @@ footer {
 
 .item-with-metadata .show.resource {
     margin: (2 * $spacing-l) 0;
+}
+
+.item-with-metadata{
+  .resource{
+    background: #f1eaeb;
+
+    .media-list{
+      padding: gutter();
+      background: #f8f4f5;
+
+      img{
+        margin:0 !important;
+      }
+    }
+
+    .metadata{
+      padding: gutter();
+
+    }
+  }
 }
 
 .site-page-pagination {

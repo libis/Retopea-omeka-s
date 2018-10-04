@@ -316,4 +316,27 @@ ul.preview.resource-list li:first-of-type {
   margin-bottom: 1rem;
 }
 
+.item-with-metadata{
+  .resource{
+    display: flex;
+    background: #f1eaeb;
+
+    .media-list{
+      flex: 0 0 span(6 of 12);
+      padding: gutter();
+      background: #f8f4f5;
+
+      img{
+        margin:0 !important;
+      }
+    }
+
+    .metadata{
+      flex: 0 0 span(6 of 12);
+      padding: gutter();
+
+    }
+  }
+}
+
 /* @end */
