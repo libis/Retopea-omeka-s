@@ -955,6 +955,10 @@ footer {
       padding: gutter();
       background: #f8f4f5;
 
+      .media{
+        margin-right: 0 !important;
+      }
+
       img{
         margin:0 !important;
       }
