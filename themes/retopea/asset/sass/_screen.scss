@@ -706,7 +706,7 @@ footer {
     margin-top:0.5rem;
     margin-bottom:0rem;
     line-height: 1.5;
-    min-height: 3rem;
+    min-height: 7rem;
     position: absolute;
     bottom: 0;
     left: 0.9rem;
@@ -715,6 +715,12 @@ footer {
     background: white;
     border-bottom: 1px solid rgba($primary, 0.1);
     border-right: 1px solid rgba($primary, 0.2);
+
+    .block-link{
+      overflow: auto;
+      height: auto;
+      display: block;
+    }
   }
 
   h2:before{
@@ -722,6 +728,8 @@ footer {
     content: "\f105";
     color: rgba(112,49,57,0.5);
     margin-right: 0.5rem;
+    float: left;
+    width: 8px;
   }
 }
 
