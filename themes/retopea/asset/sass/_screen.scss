@@ -686,7 +686,9 @@ footer {
   //flex: left;
   flex-basis: span(12 of 12);
   padding: 0 gutter() / 2;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
+  padding-bottom:1rem;
+  position: relative;
 
   .col-content{
     overflow:hidden;
@@ -694,24 +696,37 @@ footer {
 
   img{
     width: 100%;
+    vertical-align: top;
   }
 
   h2{
     color:$primary;
     font-weight: 300;
-    text-transform: uppercase;
     font-size: 1 * $base-font-size;
-    margin-top:0;
+    margin-top:0.5rem;
+    margin-bottom:0rem;
+    line-height: 1.5;
+    min-height: 3rem;
+    position: absolute;
+    bottom: 0;
+    left: 0.9rem;
+    width: 90%;
+    padding: 1rem;
+    background: white;
+    border-bottom: 1px solid rgba($primary, 0.1);
+    border-right: 1px solid rgba($primary, 0.2);
+  }
 
-    a{
-      border-bottom: 1px solid rgba($primary,0.2);
-    }
+  h2:before{
+    font-family: "Font Awesome 5 Free";
+    content: "\f105";
+    color: rgba(112,49,57,0.5);
+    margin-right: 0.5rem;
   }
 }
 
 .item-showcase {
     margin: 0;
-
     margin-bottom: $spacing-l;
     //padding: ($spacing-l - 1px) 0 0;
     overflow: hidden;
