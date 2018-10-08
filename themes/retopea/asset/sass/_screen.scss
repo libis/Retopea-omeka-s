@@ -642,7 +642,7 @@ footer {
 .home-blocks{
   display: block;
   flex-wrap:wrap;
-  //padding-top:25px;
+  padding-top:1.5rem;
 
   .language-menu{
     margin-top: 10px;
@@ -732,6 +732,13 @@ footer {
     width: 8px;
   }
 }
+
+.col-2{
+  h2{
+    min-height: 4rem;
+  }
+}
+
 
 .item-showcase {
     margin: 0;
