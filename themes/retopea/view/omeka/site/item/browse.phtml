@@ -16,12 +16,15 @@ $lang = $libis->getLanguage();
 <?php if ($itemSetShow): ?>
     <h1>
       <span class="title">
-        <?php echo implode(", ",$itemSet->value('dcterms:title',array('all' => 'true','lang' => $lang)));?>
+        <?php if($itemSet->value('dcterms:title',array('all' => 'true','lang' => $lang))):?>
+          <?php echo implode(", ",$itemSet->value('dcterms:title',array('all' => 'true','lang' => $lang)));?>
+        <?php endif;?>
       </span>
     </h1>
     <div class="metadata">
-        <?php //echo $itemSet->displayValues(); ?>
+      <?php if($itemSet->value('dcterms:description',array('all' => 'true','lang' => $lang))):?>
         <?php echo implode(", ",$itemSet->value('dcterms:description',array('all' => 'true','lang' => $lang)));?>
+      <?php endif;?>
     </div>
     <div class="item-set-items">
     <?php echo '<h3>' . $escape($this->translate('Items')) . '</h3>'; ?>
