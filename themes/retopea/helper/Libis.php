@@ -9,9 +9,10 @@ class Libis extends AbstractHelper
                       'en'=> 'English',
                       'nl'=> 'Nederlands'
                     );
+
       $path =  $_SERVER["REQUEST_URI"];
       $parts = explode('/', $path);
-      $lang = $parts[3];
+      $lang = $parts[2];
       return $lang;
     }
 
