@@ -12,11 +12,6 @@
 
     /* @group ----- Navigation ----- */
 
-    header nav.closed ul {
-    }
-
-    header nav .menu-btn {
-    }
 
     header nav.open:before {
         content: "\f00d";
@@ -57,11 +52,11 @@
 
     .home-blocks{
       .intro{
-        flex-basis: span(12 of 12);
+        //flex-basis: span(12 of 12);
       }
 
       .language-menu{
-        flex-basis: span(0 of 12);
+        //flex-basis: span(0 of 12);
       }
     }
 

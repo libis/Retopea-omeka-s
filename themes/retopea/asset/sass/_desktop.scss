@@ -1,5 +1,4 @@
 #content {
-    padding: 0 (2 * gutter()) $spacing-l;
     min-height: 400px;
 }
 
@@ -20,12 +19,7 @@ td {
 
 header {
     position: relative;
-    padding: $spacing-m 0;
     //margin-bottom: 2 * $spacing-l;
-}
-
-header > * {
-    padding: 0 (2 * gutter());
 }
 
 /* @end */
@@ -40,7 +34,7 @@ footer {
 
 /* @group ----- Navigation ----- */
 
-header nav {
+/*header nav {
     margin: 0 auto 0 auto;
     position: static;
     justify-content: space-between;
@@ -165,7 +159,7 @@ header .navigation {
             border-bottom: 1px solid $light;
             z-index: -1;
         }*/
-    }
+  /*  }
 
     & > li > ul > li {
         //width: 25%;
@@ -195,7 +189,7 @@ header .navigation {
 }
 
 /* All top-level nav items with siblings are parent items and get an arrow. */
-header .nav-menu > ul > li > a:not(:only-child):after {
+/*header .nav-menu > ul > li > a:not(:only-child):after {
     font-family: "Font Awesome 5 Free";
     content: "\f107";
     display: inline-block;
@@ -208,7 +202,7 @@ header .nav-menu > ul li:hover ul li {
 }
 
 /* Second and Third level items */
-header .nav-menu > ul > li > ul > li a,
+/*header .nav-menu > ul > li > ul > li a,
 header .nav-menu > ul > li > ul > li > ul > li a {
     padding-left: 0;
     line-height: 2;
@@ -248,14 +242,52 @@ header .nav-menu > ul > li > ul > li > ul > li a {
     width: 35px;
     height: 1.5*$base-line-height;
 }
+*/
 
-
-.hero-top{display:none;}
+.hero-top{}
 .hero{
   .intro{
       .title-box{
-      width: span(6 of 12);
+
     }
+  }
+}
+
+.home-blocks{
+  .intro{
+    width: span(6 of 12);
+  }
+
+  #newsletter{
+      width: span(6 of 12);
+  }
+}
+
+.siema{
+  display: block;
+}
+
+.news-item{
+  display: flex;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba($primary-light,0.2);
+
+  h3{
+    margin-top: 0;
+    color: $primary;
+  }
+
+  .thumbnail{
+    margin-right: 3rem;
+  }
+
+  .body{
+    h4{
+      margin: 0 0 1rem 0;
+    }
+
+
   }
 }
 

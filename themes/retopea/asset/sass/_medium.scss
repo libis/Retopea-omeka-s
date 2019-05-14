@@ -1,5 +1,4 @@
 #content {
-    padding: 0 (2 * gutter()) $spacing-l;
     min-height: 400px;
 }
 
@@ -18,21 +17,10 @@ td {
 
 /* @group ----- Header ----- */
 
-header {
-    position: relative;
-    padding: $spacing-m 0;
-    //margin-bottom: 2 * $spacing-l;
-}
-
-header > * {
-    padding: 0 (2 * gutter());
-}
-
 header nav {
     margin: 0 auto 0 auto;
     position: static;
     justify-content: space-between;
-    padding: 0 (2 * gutter());
 }
 
 /* @end */
@@ -63,63 +51,9 @@ footer {
     height: 1.5*$base-line-height;
 }
 
-.hero-top{
-  flex: 0 0 340px;
-  padding-top: 0;
-  padding-bottom: 0;
-  background: white;
-  line-height: 1.2;
-
-  a{
-    color: $primary;
-  }
-
-  .intro{
-    @include container;
-    display:flex;
-
-    .menu-btn {
-        font-size: 2rem;
-        padding: 3px 5px;
-        margin-right: 6px;
-        margin-left: 0;
-        background: rgba($primary,0.1);
-        cursor: pointer;
-        border: none;
-    }
-
-    .title-box{
-      width: 100%;
-      font-weight: 100;
-
-      .site-title:hover,
-      .site-title:active {
-          border-bottom: 0;
-      }
-
-      .site-title {
-        font-weight:100;
-        margin:0;
-        color: $primary;
-        font-size: 3.3rem;
-        text-transform: none;
-        text-transform: uppercase;
-      }
-
-      .site-sub-title{
-        display: inline-block;
-        width:120px;
-        color: rgba($primary,0.8);
-      }
-    }
-  }
-}
-
 .hero{
   display:block;
-  background: url('../images/banner_kadoc.jpg');
-  background-size: cover;
-  background-position: center center;
+
   padding:12rem 0 0 0;
   margin-bottom: 1.2 * $spacing-l;
 
@@ -280,13 +214,12 @@ ul.preview.resource-list li:first-of-type {
 }
 
 .page #content{
-  padding: 0 2*gutter() 30px;
+  //padding: 0 2*gutter() 30px;
 }
 
 .home-blocks{
   display: flex;
   flex-wrap:wrap;
-  margin: 0 -(gutter() / 2);
 
   .language-menu{
     background:transparent;

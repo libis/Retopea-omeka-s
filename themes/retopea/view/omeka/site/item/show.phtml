@@ -6,7 +6,46 @@ $itemMedia = $item->media();
 
 $libis = $this->plugin('Libis');
 $lang = $libis->getLanguage();
+$news = false;
 ?>
+
+<?php $itemSets = $item->itemSets(); ?>
+<?php if (count($itemSets) > 0): ?>
+<?php
+  foreach ($item->itemSets() as $itemSet):
+    if($itemSet->displayTitle() == 'News'):
+      $news = true;
+    endif;
+  endforeach;
+?>
+<?php endif; ?>
+
+<?php if($news):?>
+  <nav class="breadcrumbs"><a href="/s/start/page/news">News</a> &gt; <?php echo $item->value('dcterms:title'); ?></nav>
+  <div class="news-item">
+    <div class="thumbnail">
+      <?php echo $this->thumbnail($item, 'medium'); ?>
+    </div>
+    <div class="body">
+      <h3><?php echo $item->value('dcterms:title'); ?></h3>
+      <div class="date">
+        <?php if($item->value('dcterms:date')):?>
+          <?php echo $item->value('dcterms:date');?>
+        <?php endif;?>
+      </div>
+      <div class="description">
+        <?php if($item->value('dcterms:description')):?>
+          <?php echo $item->value('dcterms:description');?>
+        <?php endif;?>
+      </div>
+      <div class="subject">
+        <?php if($item->value('dcterms:subject')):?>
+          <?php echo $item->value('dcterms:subject');?>
+        <?php endif;?>
+      </div>
+    </div>
+  </div>
+<?php else: ?>
 
 <h1>
   <?php
@@ -60,4 +99,6 @@ $lang = $libis->getLanguage();
   </div>
   <?php endif; ?>
 </div>
+
 <?php $this->trigger('view.show.after'); ?>
+<?php endif;?>

@@ -2,7 +2,7 @@
 
 $susy: (
     columns:                            12,
-    container:                          1200px,
+    container:                          1330px,
     global-box-sizing:                  border-box
 );
 
@@ -19,7 +19,9 @@ $bold:                                  darken($gray, 20%);
 $light:                                 lighten($gray, 20%);
 $bg:                                    lighten($gray, 30%);
 $bg:                                    #fff;
-$primary:  #703139;
+$primary:  #9a2022; //#703139;
+$primary-dark: #5c0a10;
+$primary-light: #c99796;
 
 // Typography
 
@@ -35,7 +37,8 @@ $spacing-l:                             $base-line-height;
 // Mixins
 
 @mixin container {
-    max-width: 1200px;
+    max-width: 1330px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto;    
+    padding: 0 (2 * gutter());
 }

@@ -220,6 +220,8 @@ header nav ul {
     a {
         display: inline-block;
         width: 100%;
+        color: white !important;
+        font-size: 2.4rem !important;
     }
 
     a:hover {
@@ -246,14 +248,14 @@ header nav ul {
 .nav-menu{
   display:none;
   padding:gutter();
-  width:96%;
-  max-width: 400px;
+  min-height: 100vw;
+  width:100%;
   position: absolute;
-  top:5.2rem;
-  left:2%;
+  top:0;
+  left:0;
   z-index: 1000;
   margin: 0 auto;
-  background: #efefef;
+  background: $primary;
 
   #language-nav{
     color: #777;
@@ -282,11 +284,12 @@ header nav ul {
 }
 
 .nav-menu ul{
-  padding:0;
-  margin:0.2rem;
+  @include container;
+  margin-top: 4rem;
 
   li{
-    border-top: 1px solid rgba($primary,0.1);
+    padding-bottom: 0.5rem;
+    text-align: center;
   }
 
   li:first-of-type{
@@ -417,7 +420,7 @@ nav.pagination {
 
 .breadcrumbs {
     font-size: .85 * $base-font-size;
-    margin: 15px 0 5px;
+    margin: 15px 0 15px;
 
     a{
       font-weight: 700;
@@ -433,25 +436,27 @@ nav.pagination {
     line-height: 1.1 * $base-line-height;
 }
 
-header {
-    background-color: #fff;
-    padding-bottom: ($spacing-m - 1px);
-    position: relative;
-
-
-    & > * {
-        @include container;
-        padding: 0 gutter();
-        display: block;
-    }
+header{
+  background: url('../images/banner_kadoc.jpg');
+  background-size: cover;
+  background-position: center center;
+  margin-bottom: 3rem;
 }
 
+.gradient{
+  background-image: linear-gradient(to top left, rgba($primary-dark,0.5), rgba($primary-light,0.2));
+
+  & > * {
+      @include container;
+      //padding: 0 gutter();
+      display: block;
+  }
+}
 
 .hero-top{
   width:100%;
-  padding-top: $spacing-m;
-  padding-bottom: $spacing-m/2;
-  background: $primary;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   line-height: 1.2;
 
   a{
@@ -460,15 +465,19 @@ header {
 
   .intro{
     display:flex;
+    width: 100%;
+    justify-content: space-between;
 
+    .title-btn {
+      z-index:100000;
+    }
     .menu-btn {
-        font-size: 2rem;
-        padding: 3px 5px;
-        border: 1px solid rgba(white,0.6);
+        font-size: 4rem;
         margin-right: 6px;
         margin-left:8px;
         cursor: pointer;
         line-height: 3.9rem;
+        z-index: 10000;
     }
 
     .title-box{
@@ -484,9 +493,12 @@ header {
         font-weight:100;
         margin:0;
         color: white;
-        font-size: 3.3rem;
+        font-size: 0;
         text-transform: none;
         text-transform: uppercase;
+        padding: 2rem 2rem 1.8rem 2rem;
+        background: white;
+        display: inline-block;
       }
 
       .site-sub-title{
@@ -496,6 +508,26 @@ header {
         color: rgba(white,0.8);
       }
     }
+  }
+
+  .slogan{
+    color: white;
+    text-align: right;
+    text-transform: uppercase;
+
+    h1{
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-top: 8rem;
+      margin-bottom: 0.4rem;
+      border-top: 1px solid $primary-light;
+
+      span{
+        padding: 0.5rem 0.5rem;
+
+      }
+    }
+
   }
 }
 
@@ -586,7 +618,7 @@ footer {
 
 #content {
     @include container;
-    padding: 0 gutter() $spacing-l;
+    //padding: 0 gutter() $spacing-l;
 
     h1{
       font-weight: 700;
@@ -639,30 +671,50 @@ footer {
 
 }
 
+.page-blocks{
+  h3{
+    color: $primary;
+    font-size: 2.8rem;
+    font-weight: 200;
+
+    span{
+      font-weight: 700;
+    }
+  }
+}
+
 .home-blocks{
   display: block;
   flex-wrap:wrap;
-  padding-top:1.5rem;
+  padding-top:3rem;
+
+  .intro{
+    padding-right:3rem;
+    border-right: 1px solid $primary;
+
+    h3{
+      margin-top: 0;
+    }
+  }
+
+  .start-button{
+    margin-top:3rem;
+    a {
+      background: $primary;
+      color: white;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    a::after{
+      font-family: "Font Awesome 5 Free";
+      content: "\f105";
+      margin-left: 5px;
+    }
+  }
 
   .language-menu{
     margin-top: 10px;
-
-    .start-button{
-      a {
-        background: $primary;
-        color: white;
-        border-radius: 2px;
-        padding: 10px;
-        font-weight: 100;
-        text-transform: uppercase;
-      }
-
-      a::after{
-        font-family: "Font Awesome 5 Free";
-        content: "\f105";
-        margin-left: 5px;
-      }
-    }
 
     ul{
       padding-left:4rem;
@@ -681,6 +733,23 @@ footer {
     }
   }
 }
+
+.more-news{
+  text-align: center;
+  padding:1.7rem 0 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid rgba($primary-light,0.5);
+
+
+  a.btn{
+    font-size: 1.8rem;
+  	padding:0.7rem 0.8rem;
+  	background: $primary;
+  	border:none;
+    color:white;
+  }
+}
+
 
 .block{
   //flex: left;
@@ -1262,3 +1331,37 @@ a.metadata-browse-link {
 }
 
 /* @end */
+
+.siema{
+  display: none;
+}
+
+.social{
+  padding:1rem 0;
+  display: flex;
+  justify-content: space-around;
+
+  a{
+    font-size: 3rem;
+  }
+}
+
+.news-item{
+  h4 a{
+    border-bottom: 2px solid $primary;
+  }
+  .date{
+    margin-bottom: 0.5rem;
+    color: #666;
+  }
+
+  .description{
+    margin-bottom: 1rem;
+    font-family: $serif;
+  }
+
+  .subject{
+    margin-top: 0.5rem;
+    color: rgba($primary,0.6);
+  }
+}
