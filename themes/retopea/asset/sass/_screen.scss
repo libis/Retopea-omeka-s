@@ -689,11 +689,10 @@ footer {
   padding-top:3rem;
 
   .intro{
-    padding-right:3rem;
-    border-right: 1px solid $primary;
-
+  
     h3{
       margin-top: 0;
+      text-align: right;
     }
   }
 
@@ -735,19 +734,7 @@ footer {
 }
 
 .more-news{
-  text-align: center;
-  padding:1.7rem 0 1rem;
-  margin-top: 1rem;
-  border-top: 1px solid rgba($primary-light,0.5);
-
-
-  a.btn{
-    font-size: 1.8rem;
-  	padding:0.7rem 0.8rem;
-  	background: $primary;
-  	border:none;
-    color:white;
-  }
+  display: none;
 }
 
 

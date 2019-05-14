@@ -85,7 +85,18 @@ class Carousel extends AbstractBlockLayout
 				$mediaRenderer = $media->renderer();
 				if ((strpos($mediaType, 'image/') !== false) || (strpos($mediaRenderer, 'youtube') !== false)) {
 					$urls[$i]['thumbnail']= $media->thumbnailUrl('large');
-          $urls[$i]['text']= $attachment->caption();
+          $item = $attachment->item();
+          if($item->value('dcterms:alternative')):
+            $description = $item->value('dcterms:alternative');
+          else:
+            $description = $item->value('dcterms:description');
+          endif;
+          $urls[$i]['text']= "
+          <h3>".$item->link($item->value('dcterms:title'))."</h3>
+            <p>".$description."</p>
+            <br />
+            <p class='btn'>".$item->link("Read more", array('class'=>'btn'))."</p>
+          ";
           $i++;
 				}
 			}
