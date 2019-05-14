@@ -690,6 +690,7 @@ footer {
   display: block;
   flex-wrap:wrap;
   padding-top:3rem;
+  margin-bottom: 5rem;
 
   .intro{
 
@@ -701,6 +702,9 @@ footer {
 
   .start-button{
     margin-top:3rem;
+    margin-bottom: 0.8rem;
+    text-align: right;
+
     a {
       background: $primary;
       color: white;
@@ -1329,12 +1333,23 @@ a.metadata-browse-link {
 }
 
 .social{
-  padding:1rem 0;
+  padding:1rem 0 2rem;
   display: flex;
   justify-content: space-around;
 
   a{
     font-size: 3rem;
+  }
+}
+
+.partners{
+  padding:1rem 0 1rem;
+  display: flex;
+  justify-content: space-around;
+
+  img{
+    max-height: 60px;
+    max-width: 300px;
   }
 }
 
