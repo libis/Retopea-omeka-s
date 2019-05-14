@@ -596,13 +596,11 @@ button.o-icon-search {
 /* @group ----- Footer ----- */
 
 footer {
-    padding: 1.7 * gutter() 0;
     margin-top: 2*gutter();
     border-top: 1px solid rgba($primary,0.1);
 
     .logos{
       @include container;
-      padding:0 2*gutter();
     }
 
     img {
