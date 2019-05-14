@@ -180,6 +180,7 @@ select {
     content: "\f069";
     font-family: "Font Awesome 5 Free";
     font-size: .75 * $base-font-size;
+    font-weight: 900;
 }
 
 .field .value:not(:last-child) {
@@ -584,6 +585,7 @@ button.o-icon-search {
         right: 0;
         text-align: center;
         text-indent: 0;
+        font-weight: 900;
     }
 }
 
@@ -665,6 +667,7 @@ footer {
       content: "\f105";
       color: rgba($primary,0.5); /* or whatever color you prefer */
       margin-right: 0.5rem;
+      font-weight: 900;
     }
   }
 
@@ -689,7 +692,7 @@ footer {
   padding-top:3rem;
 
   .intro{
-  
+
     h3{
       margin-top: 0;
       text-align: right;
@@ -709,6 +712,7 @@ footer {
       font-family: "Font Awesome 5 Free";
       content: "\f105";
       margin-left: 5px;
+      font-weight: 900;
     }
   }
 
@@ -782,6 +786,7 @@ footer {
   h2:before{
     font-family: "Font Awesome 5 Free";
     content: "\f105";
+    font-weight: 900;
     color: rgba(112,49,57,0.5);
     margin-right: 0.5rem;
     float: left;
