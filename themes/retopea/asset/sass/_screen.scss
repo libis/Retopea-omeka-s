@@ -679,7 +679,7 @@ footer {
     color: $primary;
     font-size: 2.8rem;
     font-weight: 200;
-    padding-bottom:3rem;
+    padding-bottom:2.5rem;
     border-bottom: 1px solid rgba($primary,0.1);
 
     span{
@@ -811,14 +811,11 @@ footer {
 
 .item-showcase {
     margin: 0;
-    margin-bottom: $spacing-l;
+    margin-bottom: 6rem;
     //padding: ($spacing-l - 1px) 0 0;
     overflow: hidden;
-    text-align: center;
     clear: both;
-    display: flex;
-    flex-wrap: wrap;
-    background: rgba(#f8f4f5,1);
+    display: block;
 }
 
 .item.resource .caption {
@@ -837,6 +834,59 @@ footer {
 .item-showcase .resource.item {
     vertical-align: top;
     margin:0;
+    padding-bottom: 2rem;
+    margin-bottom: 4rem;
+
+    .media{
+      height:20rem;
+      background-size: cover !important;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      border: 1px solid rgba($primary,0.3);
+      border-bottom: none;
+    }
+
+    .text{
+      padding:2rem;
+      background: rgba($primary-dark,0.03);
+      min-height: 250px;
+    }
+
+    .date{
+      margin-bottom: 0.5rem;
+      color: #666;
+      font-weight: 100;
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .description{
+      margin-bottom: 2rem;
+      min-height: 60px;
+      font-family: $serif;
+    }
+
+    .subject{
+      margin-top: 0.5rem;
+      color: rgba($primary,0.6);
+    }
+
+    .more{
+      padding: 10px 0;
+      text-align: right;
+      a{
+        border-bottom: 2px solid $primary;
+        color: $primary;
+        padding-bottom: 3px;
+
+        &::after {
+            font-family: "Font Awesome 5 Free";
+            content: "\f105";
+            margin-left: 5px;
+            font-weight: 900;
+        }
+      }
+    }
 
     img {
         margin-right: $spacing-m;
@@ -864,28 +914,25 @@ footer {
 
 
     &:not(:only-child) {
-        width: 25%;
+        width: span(12 of 12);
         clear: none;
         padding: 0 gutter();
     }
 
-    &:not(:only-child) .media{
-      margin: $spacing-l 0 0;
-    }
-
-    &:not(:only-child) h3 {
+    &:not(:only-child) h4 {
         clear: left;
-        font-size: .85 * $base-font-size;
+        font-size: 1.9rem;
+        font-weight: bold;
+        margin-bottom: 0.2rem;
         line-height: $base-line-height;
         margin: $spacing-m 0;
     }
 
     &:not(:only-child) img {
-        max-height: 7 * $spacing-l;
-        width: auto;
         float: none;
         margin-right: 0;
         vertical-align: top;
+        width: 100%;
     }
 }
 

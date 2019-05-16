@@ -1,3 +1,4 @@
+<h3>Latest news </h3>
 <div class="item-showcase">
 <?php foreach ($attachments as $attachment): ?>
     <div class="item resource">
@@ -6,16 +7,33 @@
     if ($item):
         $media = $attachment->media() ?: $item->primaryMedia();
         if ($media):?>
-          <div class="media">
-            <?php echo $item->linkRaw($this->thumbnail($media, $this->thumbnailType));?>
+          <div class="media" style="background:url(<?php echo $item->primaryMedia()->thumbnailUrl('square')?>)">
+
           </div>
         <?php endif; ?>
         <?php $showTitleOption = $this->showTitleOption; ?>
+        <div class="text">
         <?php if ($showTitleOption == 'item_title'): ?>
-        <h3><?php echo $item->link($item->displayTitle()); ?></h3>
+        <h4><?php echo $item->link($item->displayTitle()); ?></h4>
         <?php elseif ($showTitleOption == 'file_name'): ?>
-        <h3><?php echo $media->displayTitle(); ?>
-        <?php endif; ?>
+
+          <h4><?php echo $media->displayTitle(); ?></h4>
+          <?php endif; ?>
+          <div class="date">
+            <?php if($item->value('dcterms:date')):?>
+              <?php echo $item->value('dcterms:date');?>
+            <?php endif;?>
+          </div>
+          <div class="description">
+            <?php if($item->value('dcterms:alternative')):?>
+              <?php echo $item->value('dcterms:alternative');?>
+            <?php endif;?>
+          </div>
+          <div class="more">
+            <?php echo $item->link('Read more');?>
+          </div>
+        </div>
+
     <?php endif; ?>
 
     <?php
@@ -27,3 +45,4 @@
     </div>
 <?php endforeach; ?>
 </div>
+<div class="more-news-showcase"><a class="btn" href="/s/start/page/news">More news</a></div>
