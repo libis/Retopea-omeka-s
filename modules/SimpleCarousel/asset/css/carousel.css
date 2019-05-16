@@ -89,4 +89,6 @@ font-weight: 300;
 	font-weight: 700;
 	text-transform: uppercase;
 	margin-bottom: 1rem;
+	border:none;
+	padding:0;
 }

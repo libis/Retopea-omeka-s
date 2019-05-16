@@ -279,9 +279,6 @@ header .nav-menu > ul > li > ul > li > ul > li a {
 
 .news-item{
   display: flex;
-  margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid rgba($primary-light,0.2);
 
   h3{
     margin-top: 0;
@@ -290,15 +287,27 @@ header .nav-menu > ul > li > ul > li > ul > li a {
 
   .thumbnail{
     margin-right: 3rem;
+    width: 250px;
   }
 
   .body{
     h4{
       margin: 0 0 1rem 0;
     }
-
-
   }
 }
+
+footer {
+    .contact{
+      width: span(3 of 12);
+      padding-right: 3rem;
+
+    }
+
+    .logos{
+      width: span(9 of 12);
+    }
+}
+
 
 /* @end */

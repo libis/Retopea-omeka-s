@@ -120,15 +120,23 @@ $lang = $libis->getLanguage();
             <?php echo $this->content; ?>
         </div>
         <footer>
-
-          <div class="logos">
-            <img src="<?php echo $this->assetUrl("images/logo.png");?>">
-            <a href="https://kuleuven.be/"><img src="<?php echo $this->assetUrl("images/KULEUVEN.png");?>"></a>
-            <a href="http://libis.be/"><img src="<?php echo $this->assetUrl("images/libis_gray.png");?>"></a>
-            <div class="horizon">
-              <img src="<?php echo $this->assetUrl("images/2020.png");?>">
+          <div class="footer-content">
+            <div class="contact">
+              <strong><a href="/s/start/page/contact">CONTACT US</a></strong><br />
+              Project Coordinator<br />
+              Katholieke Universiteit Leuven<br />
+              Oude Markt 13, Leuven 3000, Belgium
+            </div>
+            <div class="logos">
+              <img style="height:50px;" src="<?php echo $this->assetUrl("images/logo.png");?>">
+              <a href="https://kuleuven.be/"><img style="height:50px;" src="<?php echo $this->assetUrl("images/KULEUVEN.png");?>"></a>
+              <a href="http://libis.be/"><img style="height:50px;" src="<?php echo $this->assetUrl("images/libis_gray.png");?>"></a>
+              <div class="horizon">
+                <img style="height:80px;" src="<?php echo $this->assetUrl("images/2020.png");?>">
+              </div>
             </div>
           </div>
+
 
         </footer>
     </body>

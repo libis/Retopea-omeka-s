@@ -60,13 +60,14 @@
         </div>
     <?php endforeach; ?>
     </div>
+    <?php
+    if ($this->linkText):
+        echo $this->hyperlink($this->linkText, $this->url(
+            'site/resource', ['controller' => $this->resourceType, 'action' => 'browse'], ['query' => $this->query], true
+        ));
+    endif;
+    ?>
 <?php endif;?>
-<?php
-if ($this->linkText):
-    echo $this->hyperlink($this->linkText, $this->url(
-        'site/resource', ['controller' => $this->resourceType, 'action' => 'browse'], ['query' => $this->query], true
-    ));
-endif;
-?>
+
 
 </div>

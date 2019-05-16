@@ -595,16 +595,19 @@ button.o-icon-search {
 /* @group ----- Footer ----- */
 
 footer {
+    @include container;
     margin-top: 2*gutter();
-    border-top: 1px solid rgba($primary,0.1);
 
-    .logos{
-      @include container;
+    .footer-content{
+      border-top: 1px solid rgba($primary,0.1);
+      display: flex;
+      padding: 6rem 0;
+      color: #666;
+      font-weight: 100;
     }
 
     img {
         //max-width: 200px;
-        height:50px;
         width:auto !important;
         margin-bottom:0.5rem !important;
         margin-right:15px !important;
@@ -676,6 +679,8 @@ footer {
     color: $primary;
     font-size: 2.8rem;
     font-weight: 200;
+    padding-bottom:3rem;
+    border-bottom: 1px solid rgba($primary,0.1);
 
     span{
       font-weight: 700;
@@ -686,14 +691,16 @@ footer {
 .home-blocks{
   display: block;
   flex-wrap:wrap;
-  padding-top:3rem;
-  margin-bottom: 5rem;
+  padding-top:4rem;
+  margin-bottom: 7rem;
 
   .intro{
 
     h3{
       margin-top: 0;
       text-align: right;
+      border:none;
+      padding:0;
     }
   }
 
@@ -1334,7 +1341,6 @@ a.metadata-browse-link {
   margin-bottom: 4rem;
   display: flex;
   justify-content: space-around;
-  border-bottom:1px solid $primary-light;
 
   a{
     font-size: 3rem;
@@ -1359,6 +1365,14 @@ a.metadata-browse-link {
 }
 
 .news-item{
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba($primary-light,0.2);
+
+  &:last-of-type{
+    border:none;
+  }
+
   h4 a{
     border-bottom: 2px solid $primary;
   }
