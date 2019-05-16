@@ -497,7 +497,6 @@ header{
         font-size: 0;
         text-transform: none;
         text-transform: uppercase;
-        padding: 2rem 2rem 1.8rem 2rem;
         background: white;
         display: inline-block;
       }
@@ -1331,9 +1330,11 @@ a.metadata-browse-link {
 }
 
 .social{
-  padding:1rem 0 2rem;
+  padding:1rem 0 6rem;
+  margin-bottom: 4rem;
   display: flex;
   justify-content: space-around;
+  border-bottom:1px solid $primary-light;
 
   a{
     font-size: 3rem;
@@ -1341,17 +1342,18 @@ a.metadata-browse-link {
 }
 
 .partners{
-  padding:1rem 0 2rem;
+  padding:2rem 0 2rem;
   display: flex;
   justify-content: space-around;
   text-align: center;
+
 
   a{
     width: 25%;
   }
 
   img{
-    max-height: 110px;
+    max-height: 60px;
     max-width: 200px;
   }
 }
