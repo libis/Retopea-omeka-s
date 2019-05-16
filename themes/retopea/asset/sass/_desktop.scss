@@ -310,7 +310,10 @@ header .nav-menu > ul > li > ul > li > ul > li a {
 
   .thumbnail{
     margin-right: 3rem;
-    width: 250px;
+
+    img{
+      width: 200px;
+    }
   }
 
   .body{
