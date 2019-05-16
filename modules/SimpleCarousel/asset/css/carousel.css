@@ -58,18 +58,20 @@
 	display: block;
 	border:none;
 	background: #9a2022;
-	padding:6rem 3rem;
+	padding:3rem 3rem;
+	line-height: 1.8 !important;
 }
 
 #carousel-title a, #carousel-title p{
 	color: white;
 	font-family: "Roboto",sans-serif;
-	font-size: 1.8rem;
-	line-height: 1.8;
+	font-size: 1.6rem;
+	line-height: 1.2;
 }
 
 #carousel-title p{
 font-weight: 300;
+line-height: 1.5;
 }
 
 #carousel-title a{
@@ -85,7 +87,7 @@ font-weight: 300;
 
 #carousel-title h3{
 	margin-top: 0;
-	font-size: 2.6rem;
+	font-size: 2.4rem;
 	font-weight: 700;
 	text-transform: uppercase;
 	margin-bottom: 1rem;
