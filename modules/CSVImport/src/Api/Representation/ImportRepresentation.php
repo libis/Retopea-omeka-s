@@ -7,18 +7,18 @@ class ImportRepresentation extends AbstractEntityRepresentation
 {
     public function getJsonLd()
     {
-        $undo_job = null;
-        if ($this->undoJob()) {
-            $undo_job = $this->undoJob()->getReference();
+        $undoJob = $this->undoJob();
+        if ($undoJob) {
+            $undoJob = $undoJob->getReference();
         }
 
         return [
-            'added_count' => $this->addedCount(),
-            'updated_count' => $this->updatedCount(),
             'comment' => $this->comment(),
             'resource_type' => $this->resourceType(),
+            'has_err' => $this->hasErr(),
+            'stats' => $this->stats(),
             'o:job' => $this->job()->getReference(),
-            'o:undo_job' => $undo_job,
+            'o:undo_job' => $undoJob,
         ];
     }
 
@@ -44,11 +44,6 @@ class ImportRepresentation extends AbstractEntityRepresentation
         return $this->resource->getComment();
     }
 
-    public function addedCount()
-    {
-        return $this->resource->getAddedCount();
-    }
-
     public function resourceType()
     {
         return $this->resource->getResourceType();
@@ -57,5 +52,10 @@ class ImportRepresentation extends AbstractEntityRepresentation
     public function hasErr()
     {
         return $this->resource->getHasErr();
+    }
+
+    public function stats()
+    {
+        return $this->resource->getStats();
     }
 }

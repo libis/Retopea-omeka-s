@@ -1,24 +1,63 @@
 <?php
 namespace CSVImport\Mapping;
 
+use Omeka\Api\Manager as ApiManager;
+use Zend\Log\Logger;
+use Zend\ServiceManager\ServiceLocatorInterface;
+
 abstract class AbstractMapping implements MappingInterface
 {
+    /**
+     * @var string
+     */
+    protected $label;
+
+    /**
+     * @var string
+     */
+    protected $name;
+
+    /**
+     * @var array
+     */
     protected $args;
 
-    protected $api;
-
-    protected $logger;
-
+    /**
+     * @var ServiceLocatorInterface
+     */
     protected $serviceLocator;
 
+    /**
+     * @var Logger
+     */
+    protected $logger;
+
+    /**
+     * @var ApiManager
+     */
+    protected $api;
+
+    /**
+     * @var bool
+     */
     protected $hasErr = false;
 
-    public function __construct($args, $serviceLocator)
+    public function getLabel()
+    {
+        return $this->label;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function init(array $args, ServiceLocatorInterface $serviceLocator)
     {
         $this->args = $args;
+        $this->serviceLocator = $serviceLocator;
         $this->logger = $serviceLocator->get('Omeka\Logger');
         $this->api = $serviceLocator->get('Omeka\ApiManager');
-        $this->serviceLocator = $serviceLocator;
     }
 
     public function getServiceLocator()

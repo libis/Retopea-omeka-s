@@ -1,103 +1,95 @@
 <?php
 namespace CSVImport\Mapping;
 
+use Zend\View\Renderer\PhpRenderer;
+
 class PropertyMapping extends AbstractMapping
 {
-    public static function getLabel()
+    protected $label = 'Properties'; // @translate
+    protected $name = 'property-selector';
+
+    public function getSidebar(PhpRenderer $view)
     {
-        return "Properties"; // @translate
+        return $view->csvPropertySelector($view->translate('Properties'), false);
     }
 
-    public static function getName()
+    public function processRow(array $row)
     {
-        return 'property-selector';
-    }
+        // Reset the data and the map between rows.
+        $this->setHasErr(false);
+        $data = [];
 
-    public static function getSidebar($view)
-    {
-        $html = $view->csvPropertySelector($view->translate('Properties: '), false);
-        return $html;
-    }
+        // First, pull in the global settings.
 
-    public function processRow($row, $itemJson = [])
-    {
-        $propertyJson = [];
-        $columnMap = isset($this->args['column-property']) ? $this->args['column-property'] : [];
-        $urlMap = isset($this->args['column-url']) ? array_keys($this->args['column-url']) : [];
-        $referenceMap = isset($this->args['column-reference']) ? array_keys($this->args['column-reference']) : [];
-        $multivalueMap = isset($this->args['column-multivalue']) ? array_keys($this->args['column-multivalue']) : [];
-        $languageSettings = isset($this->args['column-language']) ? $this->args['column-language'] : [];
-        $globalLanguage = isset($this->args['global-language']) ? $this->args['global-language'] : '';
-        $multivalueSeparator = $this->args['multivalue-separator'];
+        // Set columns.
+        if (isset($this->args['column-property'])) {
+            $propertyMap = $this->args['column-property'];
+            foreach ($propertyMap as $column => $property) {
+                $data[key($property)] = [];
+            }
+        }
+
+        // Return if no column.
+        if (empty($propertyMap)) {
+            return $data;
+        }
+
+        // Get mappings for options.
+        if (isset($this->args['column-url'])) {
+            $urlMap = $this->args['column-url'];
+        }
+        if (isset($this->args['column-reference'])) {
+            $referenceMap = $this->args['column-reference'];
+        }
+        if (isset($this->args['column-language'])) {
+            $languageMap = $this->args['column-language'];
+        }
+
+        // Get default option values.
+        $globalLanguage = isset($this->args['global_language']) ? $this->args['global_language'] : '';
+
+        $multivalueMap = isset($this->args['column-multivalue']) ? $this->args['column-multivalue'] : [];
+        $multivalueSeparator = $this->args['multivalue_separator'];
         foreach ($row as $index => $values) {
-            // consider 'literal' as the default type
-            $type = 'literal';
-            if (in_array($index, $urlMap)) {
-                $type = 'uri';
-            }
+            if (isset($propertyMap[$index])) {
+                // Consider 'literal' as the default type.
+                $type = 'literal';
+                if (isset($urlMap[$index])) {
+                    $type = 'uri';
+                } elseif (isset($referenceMap[$index])) {
+                    $type = 'resource';
+                }
 
-            if (in_array($index, $referenceMap)) {
-                $type = 'resource';
-            }
-
-            if (isset($columnMap[$index])) {
-                foreach ($columnMap[$index] as $propertyId) {
-                    if (in_array($index, $multivalueMap)) {
-                        $multivalues = explode($multivalueSeparator, $values);
-                        foreach ($multivalues as $value) {
-                            switch ($type) {
-                                case 'uri':
-                                    $propertyJson[$propertyId][] = [
-                                        '@id' => $value,
-                                        'property_id' => $propertyId,
-                                        'type' => $type,
-                                    ];
-                                break;
-                                case 'resource':
-                                    $propertyJson[$propertyId][] = [
-                                        'value_resource_id' => $value,
-                                        'property_id' => $propertyId,
-                                        'type' => $type,
-                                    ];
-                                break;
-
-                                case 'literal':
-                                    $literalPropertyJson = [
-                                        '@value' => $value,
-                                        'property_id' => $propertyId,
-                                        'type' => $type,
-                                    ];
-                                    if ($globalLanguage !== '') {
-                                        $literalPropertyJson['@language'] = $globalLanguage;
-                                    }
-                                    if (isset($languageSettings[$index])) {
-                                        $literalPropertyJson['@language'] = $languageSettings[$index];
-                                    }
-                                    $propertyJson[$propertyId][] = $literalPropertyJson;
-                                break;
-                            }
-                        }
+                foreach ($propertyMap[$index] as $propertyTerm => $propertyId) {
+                    if (empty($multivalueMap[$index])) {
+                        $values = [$values];
                     } else {
+
+                        $values = explode($multivalueSeparator, $values);
+                        $values = array_map(function ($v) { return trim($v); }, $values);
+                    }
+                    $values = array_filter($values, 'strlen');
+                    foreach ($values as $value) {
                         switch ($type) {
                             case 'uri':
-                                $propertyJson[$propertyId][] = [
-                                    '@id' => $values,
+                                $data[$propertyTerm][] = [
+                                    '@id' => $value,
                                     'property_id' => $propertyId,
                                     'type' => $type,
                                 ];
+                                break;
 
-                            break;
                             case 'resource':
-                                $propertyJson[$propertyId][] = [
-                                    'value_resource_id' => $values,
+                                $data[$propertyTerm][] = [
+                                    'value_resource_id' => $value,
                                     'property_id' => $propertyId,
                                     'type' => $type,
                                 ];
-                            break;
+                                break;
 
                             case 'literal':
                                 $literalPropertyJson = [
-                                    '@value' => $values,
+                                    '@value' => $value,
                                     'property_id' => $propertyId,
                                     'type' => $type,
                                 ];
@@ -107,14 +99,14 @@ class PropertyMapping extends AbstractMapping
                                 if (isset($languageSettings[$index])) {
                                     $literalPropertyJson['@language'] = $languageSettings[$index];
                                 }
-                                $propertyJson[$propertyId][] = $literalPropertyJson;
-
-                            break;
+                                $data[$propertyTerm][] = $literalPropertyJson;
+                                break;
                         }
                     }
                 }
             }
         }
-        return $propertyJson;
+
+        return $data;
     }
 }
